@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 File Name：     one_dim_wave
-Description :
+Description : 重新考虑密度为0的情况 另外感觉模型不太对，速度这个有问题 需要重新建模
 Author :       meng_zhihao
 mail :       312141830@qq.com
 date：          2024/2/12
@@ -24,8 +24,8 @@ for j in range(20):
         for i in range(1,total_length-1,1):
             densities[i] += speeds[i]
             if densities[i]<=0:
-                speeds[i] = -speeds[i]
-                densities[i] = -densities[i]
+                speeds[i] = 0
+                densities[i] = 0
     xs = [x for x in range(len(densities))]
     plt.plot(xs, densities)
     plt.show()
